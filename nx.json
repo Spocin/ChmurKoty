@@ -50,6 +50,28 @@
       "linter": "eslint",
       "style": "css",
       "unitTestRunner": "jest"
+    },
+    "@nx/angular": {
+      "library": {
+        "buildable": true,
+        "addTailwind": true,
+        "changeDetection": "OnPush",
+        "displayBlock": true,
+        "simpleName": true,
+        "style": "none"
+      },
+      "component": {
+        "changeDetection": "OnPush",
+        "inlineStyle": true,
+        "style": "none"
+      }
+    },
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "none"
     }
   },
   "defaultProject": "ChmurKoty"
