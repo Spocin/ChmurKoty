@@ -1,1 +1,4 @@
 <p>FeatureHomePage works!</p>
+
+<p-toggle-switch [ngModel]="themesService.activeTheme$() === 'dark'" (onChange)="resolveTheme()" />
+<pre>Current theme: {{ themesService.activeTheme$() }}</pre>
