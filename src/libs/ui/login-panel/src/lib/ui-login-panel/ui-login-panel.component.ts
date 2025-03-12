@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Panel } from 'primeng/panel';
 import { PrimeTemplate } from 'primeng/api';
@@ -7,6 +7,7 @@ import { FloatLabel } from 'primeng/floatlabel';
 import { InputText } from 'primeng/inputtext';
 import { Password } from 'primeng/password';
 import { Button } from 'primeng/button';
+import { LoginEvent } from '@chmur-koty/util-types';
 
 @Component({
   selector: 'lib-ui-login-panel',
@@ -25,6 +26,8 @@ import { Button } from 'primeng/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiLoginPanelComponent {
+  public loginEvent = output<LoginEvent>();
+
   private readonly fb = inject(NonNullableFormBuilder);
 
   protected form = this.fb.group({

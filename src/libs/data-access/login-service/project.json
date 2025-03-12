@@ -1,0 +1,36 @@
+{
+  "name": "data-access-login-service",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src/libs/data-access/login-service/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:data-access"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "src/libs/data-access/login-service/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "src/libs/data-access/login-service/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "src/libs/data-access/login-service/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "src/libs/data-access/login-service/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
