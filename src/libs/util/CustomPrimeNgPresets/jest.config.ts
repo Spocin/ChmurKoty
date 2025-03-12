@@ -1,8 +1,8 @@
 export default {
-  displayName: 'ui-chmur-koty-preset',
+  displayName: 'util-custom-prime-ng-presets',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../../coverage/src/libs/ui/ChmurKotyPreset',
+  coverageDirectory: '../../../../coverage/src/libs/util/CustomPrimeNgPresets',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

@@ -16,7 +16,7 @@ export const ChmurKotyPreset: Preset<object> = definePreset(Aura, {
       700: '{sky.700}',
       800: '{sky.800}',
       900: '{sky.900}',
-      950: '{sky.950}'
-    }
-  }
+      950: '{sky.950}',
+    },
+  },
 });

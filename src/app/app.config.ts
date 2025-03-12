@@ -5,7 +5,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 import { DataAccessThemesServiceService } from '@chmur-koty/data-access-themes-service';
-import { ChmurKotyPreset } from '@chmur-koty/ui-chmur-koty-preset';
+import { ChmurKotyPreset } from '@chmur-koty/util-custom-prime-ng-presets';
 
 export const appConfig: ApplicationConfig = {
   providers: [

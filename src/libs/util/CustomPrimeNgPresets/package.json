@@ -1,5 +1,5 @@
 {
-  "name": "@chmur-koty/ui-chmur-koty-preset",
+  "name": "@chmur-koty/util-custom-prime-ng-presets",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
