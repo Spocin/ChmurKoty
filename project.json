@@ -3,18 +3,26 @@
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "includedScripts": [],
   "projectType": "application",
-  "prefix": "",
+  "prefix": "app",
   "sourceRoot": "./src",
   "tags": ["type:application"],
+  "i18n": {
+    "sourceLocale": "en-US",
+    "locales": {
+      "pl": "src/locale/messages.pl.xlf"
+    }
+  },
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "localize": true,
+        "i18nMissingTranslation": "warning",
         "outputPath": "dist/ChmurKoty",
         "index": "./src/index.html",
         "browser": "./src/main.ts",
-        "polyfills": [],
+        "polyfills": ["@angular/localize/init"],
         "tsConfig": "tsconfig.app.json",
         "assets": [
           {
@@ -50,6 +58,9 @@
           "optimization": false,
           "extractLicenses": false,
           "sourceMap": true
+        },
+        "pl": {
+          "localize": ["pl"]
         }
       },
       "defaultConfiguration": "production"
@@ -58,18 +69,21 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "ChmurKoty:build:production"
+          "buildTarget": "ChmurKoty:build:production,pl"
         },
         "development": {
-          "buildTarget": "ChmurKoty:build:development"
+          "buildTarget": "ChmurKoty:build:development,pl"
         }
       },
       "defaultConfiguration": "development"
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "ng-extract-i18n-merge:ng-extract-i18n-merge",
       "options": {
-        "buildTarget": "ChmurKoty:build"
+        "buildTarget": "ChmurKoty:build",
+        "outputPath": "src/locale",
+        "targetFiles": ["messages.pl.xlf"],
+        "format": "xlf"
       }
     },
     "lint": {
