@@ -5,7 +5,7 @@ import { PrimeTemplate } from 'primeng/api';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FloatLabel } from 'primeng/floatlabel';
 import { InputText } from 'primeng/inputtext';
-import { PasswordDirective } from 'primeng/password';
+import { Password } from 'primeng/password';
 import { Button } from 'primeng/button';
 
 @Component({
@@ -18,8 +18,8 @@ import { Button } from 'primeng/button';
     FloatLabel,
     InputText,
     ReactiveFormsModule,
-    PasswordDirective,
     Button,
+    Password,
   ],
   templateUrl: './ui-login-panel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
