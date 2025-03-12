@@ -18,6 +18,7 @@
       "@chmur-koty/data-access-login-service": ["src/libs/data-access/login-service/src/index.ts"],
       "@chmur-koty/data-access-themes-service": ["src/libs/data-access/themes-service/src/index.ts"],
       "@chmur-koty/feature-home-page": ["src/libs/feature/home-page/src/index.ts"],
+      "@chmur-koty/feature-language-switch": ["src/libs/feature/language-switch/src/index.ts"],
       "@chmur-koty/feature-login-page": ["src/libs/feature/login-page/src/index.ts"],
       "@chmur-koty/feature-theme-switch": ["src/libs/feature/theme-switch/src/index.ts"],
       "@chmur-koty/ui-login-panel": ["src/libs/ui/login-panel/src/index.ts"],
