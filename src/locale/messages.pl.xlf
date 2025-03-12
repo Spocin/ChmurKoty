@@ -1,5 +1,10 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" target-language="pl" datatype="plaintext" original="ng2.template">
-    <body/>
+    <body>
+      <trans-unit id="8096641719163442965" datatype="html">
+        <source>FeatureLoginPage works!</source>
+        <target state="new">FeatureLoginPage działa!</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
