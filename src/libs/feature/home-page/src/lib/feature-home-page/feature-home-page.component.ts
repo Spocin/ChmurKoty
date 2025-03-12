@@ -1,10 +1,19 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DataAccessThemesServiceService } from '@chmur-koty/data-access-themes-service';
+import { ToggleSwitch } from 'primeng/toggleswitch';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'lib-feature-home-page',
-  imports: [CommonModule],
+  imports: [CommonModule, ToggleSwitch, FormsModule],
   templateUrl: './feature-home-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FeatureHomePageComponent {}
+export class FeatureHomePageComponent {
+  protected readonly themesService = inject(DataAccessThemesServiceService);
+
+  protected resolveTheme() {
+    this.themesService.toggleTheme();
+  }
+}

@@ -15,12 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@chmur-koty/feature-home-page": [
-        "src/libs/feature/home-page/src/index.ts"
-      ],
-      "@chmur-koty/feature-login-page": [
-        "src/libs/feature/login-page/src/index.ts"
-      ]
+      "@chmur-koty/data-access-themes-service": ["src/libs/data-access/themes-service/src/index.ts"],
+      "@chmur-koty/feature-home-page": ["src/libs/feature/home-page/src/index.ts"],
+      "@chmur-koty/feature-login-page": ["src/libs/feature/login-page/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
