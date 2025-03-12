@@ -1,1 +1,23 @@
-<p>UiLoginPanel works!</p>
+<p-panel>
+  <ng-template pTemplate="header">
+    <div class="flex items-center justify-center w-full">
+      <img ngSrc="/chmurkoty_logo_1024_1024.png" height="200" width="200" alt="ChmurKoty">
+    </div>
+  </ng-template>
+
+  <form class="flex flex-col gap-4 px-8 pb-8">
+    <p-float-label variant="on">
+      <input id="email" pInputText [formControl]="form.controls.email" />
+      <label for="email">E-mail</label>
+    </p-float-label>
+
+    <p-float-label variant="on">
+      <input id="password" pPassword [formControl]="form.controls.password" />
+      <label for="password">Password</label>
+    </p-float-label>
+
+    <p-button>
+      <span i18n>Log in</span>
+    </p-button>
+  </form>
+</p-panel>
