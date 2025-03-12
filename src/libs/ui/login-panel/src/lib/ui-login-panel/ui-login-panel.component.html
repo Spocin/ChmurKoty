@@ -16,8 +16,16 @@
       <label for="password" i18n>Password</label>
     </p-float-label>
 
-    <p-button [raised]="true" class="pt-4" styleClass="w-full">
-      <span i18n>Log in</span>
+    <p-button class="pt-4" styleClass="w-full"
+              [raised]="true"
+              [loading]="isLoggingIn$()"
+              [disabled]="!form.valid || isLoggingIn$()"
+              (onClick)="emitLoginEvent()">
+      @if (isLoggingIn$()) {
+        <span i18n>Logging in</span>
+      } @else {
+        <span i18n>Log in</span>
+      }
     </p-button>
   </form>
 </p-panel>

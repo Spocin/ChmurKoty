@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, output } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Panel } from 'primeng/panel';
 import { PrimeTemplate } from 'primeng/api';
@@ -26,7 +26,8 @@ import { LoginEvent } from '@chmur-koty/util-types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiLoginPanelComponent {
-  public loginEvent = output<LoginEvent>();
+  public readonly isLoggingIn$ = input.required<boolean>();
+  public readonly loginEvent = output<LoginEvent>();
 
   private readonly fb = inject(NonNullableFormBuilder);
 
@@ -34,4 +35,15 @@ export class UiLoginPanelComponent {
     email: this.fb.control('', [Validators.required, Validators.email]),
     password: this.fb.control('', [Validators.required]),
   });
+
+  protected emitLoginEvent() {
+    const { email, password } = this.form.controls;
+
+    const loginEvent: LoginEvent = {
+      email: email.value,
+      password: password.value,
+    };
+
+    this.loginEvent.emit(loginEvent);
+  }
 }
