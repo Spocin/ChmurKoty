@@ -9,7 +9,7 @@
   "i18n": {
     "sourceLocale": "en-US",
     "locales": {
-      "pl": "src/locale/messages.pl.xlf"
+      "pl": "src/locales/messages.pl.xlf"
     }
   },
   "targets": {
@@ -84,7 +84,7 @@
       "executor": "ng-extract-i18n-merge:ng-extract-i18n-merge",
       "options": {
         "buildTarget": "ChmurKoty:build",
-        "outputPath": "src/locale",
+        "outputPath": "src/locales",
         "targetFiles": ["messages.pl.xlf"],
         "format": "xlf"
       }
