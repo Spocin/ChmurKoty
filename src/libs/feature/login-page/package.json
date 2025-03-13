@@ -4,7 +4,11 @@
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0",
-    "@nx/angular": "20.5.0"
+    "@nx/angular": "20.5.0",
+    "@chmur-koty/ui-login-panel": "0.0.1",
+    "@chmur-koty/util-types": "0.0.1",
+    "@chmur-koty/feature-theme-switch": "0.0.1",
+    "@chmur-koty/feature-language-switch": "0.0.1"
   },
   "sideEffects": false
 }
