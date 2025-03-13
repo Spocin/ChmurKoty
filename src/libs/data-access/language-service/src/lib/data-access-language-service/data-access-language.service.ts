@@ -12,7 +12,7 @@ export const enum AppLanguages {
 @Injectable({
   providedIn: 'root',
 })
-export class DataAccessLanguageServiceService {
+export class DataAccessLanguageService {
   private readonly router = inject(Router);
   private readonly messageService = inject(MessageService);
 

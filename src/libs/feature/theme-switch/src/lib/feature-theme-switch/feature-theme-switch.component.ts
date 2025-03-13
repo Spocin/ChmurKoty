@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppThemes, DataAccessThemesServiceService } from '@chmur-koty/data-access-themes-service';
+import { AppThemes, DataAccessThemesService } from '@chmur-koty/data-access-themes-service';
 import { SelectButton } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
 
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureThemeSwitchComponent {
-  protected readonly themesService = inject(DataAccessThemesServiceService);
+  protected readonly themesService = inject(DataAccessThemesService);
 
   protected themesOpts = [
     {

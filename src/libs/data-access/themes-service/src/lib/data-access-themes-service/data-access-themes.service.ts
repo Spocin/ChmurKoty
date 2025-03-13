@@ -9,7 +9,7 @@ export const enum AppThemes {
 @Injectable({
   providedIn: 'root',
 })
-export class DataAccessThemesServiceService {
+export class DataAccessThemesService {
   public static readonly darkModeClassName = 'app-dark';
   public static readonly localStorageThemeKey = 'app-theme';
 
@@ -39,12 +39,12 @@ export class DataAccessThemesServiceService {
 
       switch (theme) {
         case AppThemes.DARK:
-          this.renderer.addClass(this.dom.documentElement, DataAccessThemesServiceService.darkModeClassName);
+          this.renderer.addClass(this.dom.documentElement, DataAccessThemesService.darkModeClassName);
           break;
 
         case AppThemes.LIGHT:
-          if (this.dom.documentElement.className.includes(DataAccessThemesServiceService.darkModeClassName)) {
-            this.renderer.removeClass(this.dom.documentElement, DataAccessThemesServiceService.darkModeClassName);
+          if (this.dom.documentElement.className.includes(DataAccessThemesService.darkModeClassName)) {
+            this.renderer.removeClass(this.dom.documentElement, DataAccessThemesService.darkModeClassName);
           }
           break;
       }
@@ -53,12 +53,12 @@ export class DataAccessThemesServiceService {
 
   public toggleTheme(): void {
     const newTheme = this.getStateFromLocalStorage() === AppThemes.DARK ? AppThemes.LIGHT : AppThemes.DARK;
-    localStorage.setItem(DataAccessThemesServiceService.localStorageThemeKey, newTheme);
+    localStorage.setItem(DataAccessThemesService.localStorageThemeKey, newTheme);
     this._activeTheme$.set(newTheme);
   }
 
   private getStateFromLocalStorage(): AppThemes | undefined {
-    const storageTheme = localStorage.getItem(DataAccessThemesServiceService.localStorageThemeKey);
+    const storageTheme = localStorage.getItem(DataAccessThemesService.localStorageThemeKey);
 
     if (storageTheme && this.isValidAppTheme(storageTheme)) {
       return storageTheme;

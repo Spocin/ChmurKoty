@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DataAccessLanguageServiceService } from './data-access-language-service.service';
+import { DataAccessLanguageService } from './data-access-language.service';
 
 describe('DataAccessLanguageServiceService', () => {
-  let service: DataAccessLanguageServiceService;
+  let service: DataAccessLanguageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DataAccessLanguageServiceService);
+    service = TestBed.inject(DataAccessLanguageService);
   });
 
   it('should be created', () => {

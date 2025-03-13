@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DataAccessThemesServiceService } from './data-access-themes-service.service';
+import { DataAccessThemesService } from './data-access-themes.service';
 
 describe('ThemesServiceService', () => {
-  let service: DataAccessThemesServiceService;
+  let service: DataAccessThemesService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DataAccessThemesServiceService);
+    service = TestBed.inject(DataAccessThemesService);
   });
 
   it('should be created', () => {

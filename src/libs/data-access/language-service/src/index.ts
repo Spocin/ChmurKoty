@@ -1,1 +1,1 @@
-export * from './lib/data-access-language-service/data-access-language-service.service';
+export * from './lib/data-access-language-service/data-access-language.service';

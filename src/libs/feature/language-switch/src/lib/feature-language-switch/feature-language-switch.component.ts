@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectButton, SelectButtonOptionClickEvent } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
-import { AppLanguages, DataAccessLanguageServiceService } from '@chmur-koty/data-access-language-service';
+import { AppLanguages, DataAccessLanguageService } from '@chmur-koty/data-access-language-service';
 
 @Component({
   selector: 'lib-feature-language-switch',
@@ -11,7 +11,7 @@ import { AppLanguages, DataAccessLanguageServiceService } from '@chmur-koty/data
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureLanguageSwitchComponent {
-  protected readonly languageService = inject(DataAccessLanguageServiceService);
+  protected readonly languageService = inject(DataAccessLanguageService);
 
   protected languagesOpts = [
     {
