@@ -20,21 +20,22 @@
     </p-float-label>
 
     <p-float-label variant="on">
-      <p-password id="password" type="password" inputStyleClass="w-full" styleClass="w-full"
+      <p-password inputId="password" type="password" inputStyleClass="w-full" styleClass="w-full"
                   [formControl]="form.controls.password" [feedback]="false" />
       <label for="password" i18n>Password</label>
     </p-float-label>
 
     <p-button class="pt-4" styleClass="w-full"
+              id="login-button"
               type="submit"
               [raised]="true"
               [loading]="isLoggingIn$()"
               [disabled]="!form.valid || isLoggingIn$() || authenticationState() === true"
               (onClick)="emitLoginEvent()">
       @if (isLoggingIn$()) {
-        <span i18n>Logging in</span>
+        <label for="login-button" i18n>Logging in</label>
       } @else {
-        <span i18n>Log in</span>
+        <label for="login-button" i18n>Log in</label>
       }
     </p-button>
   </form>
