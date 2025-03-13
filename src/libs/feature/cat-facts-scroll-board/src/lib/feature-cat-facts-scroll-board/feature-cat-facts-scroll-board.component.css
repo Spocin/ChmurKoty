@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.app-dark, .app-dark *));
+
+:host {
+    @apply w-[1000px];
+}

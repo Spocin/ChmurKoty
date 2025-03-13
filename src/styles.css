@@ -6,4 +6,10 @@
 
 body {
     font-family: 'Sen', sans-serif;
+
+    @apply h-screen;
+}
+
+html {
+    @apply h-screen;
 }

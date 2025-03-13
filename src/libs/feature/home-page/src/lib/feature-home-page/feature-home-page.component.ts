@@ -1,12 +1,13 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DataAccessThemesService } from '@chmur-koty/data-access-themes-service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Toolbar } from 'primeng/toolbar';
 import { PrimeTemplate } from 'primeng/api';
 import { FeatureLanguageSwitchComponent } from '@chmur-koty/feature-language-switch';
 import { FeatureThemeSwitchComponent } from '@chmur-koty/feature-theme-switch';
 import { FeatureLogoutButtonComponent } from '@chmur-koty/feature-logout-button';
+import { FeatureCatFactsScrollBoardComponent } from '@chmur-koty/feature-cat-facts-scroll-board';
+import { Panel } from 'primeng/panel';
 
 @Component({
   selector: 'lib-feature-home-page',
@@ -18,14 +19,12 @@ import { FeatureLogoutButtonComponent } from '@chmur-koty/feature-logout-button'
     FeatureLanguageSwitchComponent,
     FeatureThemeSwitchComponent,
     FeatureLogoutButtonComponent,
+    FeatureCatFactsScrollBoardComponent,
+    Panel,
+    NgOptimizedImage,
   ],
   templateUrl: './feature-home-page.component.html',
+  styleUrl: './feature-home-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FeatureHomePageComponent {
-  protected readonly themesService = inject(DataAccessThemesService);
-
-  protected resolveTheme() {
-    this.themesService.toggleTheme();
-  }
-}
+export class FeatureHomePageComponent {}
