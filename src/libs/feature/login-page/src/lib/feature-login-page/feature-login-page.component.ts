@@ -26,12 +26,6 @@ export class FeatureLoginPageComponent {
   protected async handleLoginEvent(loginEvent: LoginEvent) {
     this.isLogginIn$.set(true);
 
-    this.messageService.add({
-      severity: 'secondary',
-      summary: $localize`Note for an author`,
-      detail: $localize`Delays are artificial to add feeling of real application :)`,
-    });
-
     const result = await this.authenticationService.authenticateUser(loginEvent);
 
     if (result === true) {

@@ -49,7 +49,6 @@ export class AuthenticationService {
 
   private mockAuthenticationCheckOnBackend(loginEvent: LoginEvent): Observable<AuthenticationSettledResult> {
     return of(loginEvent).pipe(
-      delay(3000),
       map((loginEvent) => {
         if (JSON.stringify(userMock) === JSON.stringify(loginEvent)) {
           return {
