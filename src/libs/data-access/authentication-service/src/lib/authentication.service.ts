@@ -64,4 +64,8 @@ export class AuthenticationService {
   private saveUserTokenToLocalStorage(authenticationToken: string) {
     localStorage.setItem(this.appConfig.localStorageAuthenticationKey, authenticationToken);
   }
+
+  public isAuthenticated(): boolean {
+    return !!localStorage.getItem(this.appConfig.localStorageAuthenticationKey);
+  }
 }

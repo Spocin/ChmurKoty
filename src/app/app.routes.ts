@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { authGuard } from '@chmur-koty/data-access-auth-guard';
 
 export const appRoutes: Route[] = [
   {
@@ -13,5 +14,6 @@ export const appRoutes: Route[] = [
   {
     path: 'home',
     loadComponent: () => import('@chmur-koty/feature-home-page').then((m) => m.FeatureHomePageComponent),
+    canActivate: [authGuard],
   },
 ];

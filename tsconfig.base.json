@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@chmur-koty/data-access-auth-guard": ["src/libs/data-access/auth-guard/src/index.ts"],
       "@chmur-koty/data-access-authentication-service": ["src/libs/data-access/authentication-service/src/index.ts"],
       "@chmur-koty/data-access-language-service": ["src/libs/data-access/language-service/src/index.ts"],
       "@chmur-koty/data-access-login-service": ["src/libs/data-access/login-service/src/index.ts"],
