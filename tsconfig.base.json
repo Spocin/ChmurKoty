@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@chmur-koty/data-access-language-service": ["src/libs/data-access/language-service/src/index.ts"],
       "@chmur-koty/data-access-login-service": ["src/libs/data-access/login-service/src/index.ts"],
       "@chmur-koty/data-access-themes-service": ["src/libs/data-access/themes-service/src/index.ts"],
       "@chmur-koty/feature-home-page": ["src/libs/feature/home-page/src/index.ts"],
