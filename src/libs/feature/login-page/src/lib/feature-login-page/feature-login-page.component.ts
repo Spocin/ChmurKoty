@@ -28,8 +28,8 @@ export class FeatureLoginPageComponent {
 
     this.messageService.add({
       severity: 'secondary',
-      summary: 'Note for an author',
-      detail: 'Delays are artificial to add feeling of real application :)',
+      summary: $localize`Note for an author`,
+      detail: $localize`Delays are artificial to add feeling of real application :)`,
     });
 
     const result = await this.authenticationService.authenticateUser(loginEvent);

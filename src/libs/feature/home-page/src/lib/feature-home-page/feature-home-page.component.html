@@ -1,4 +1,13 @@
-<p>FeatureHomePage works!</p>
+<p-toolbar>
+  <ng-template pTemplate="start">
+    <lib-feature-language-switch />
 
-<p-toggle-switch [ngModel]="themesService.activeTheme$() === 'dark'" (onChange)="resolveTheme()" />
-<pre>Current theme: {{ themesService.activeTheme$() }}</pre>
+  </ng-template>
+
+  <ng-template pTemplate="end">
+    <div class="flex justify-center items-center gap-4">
+      <lib-feature-theme-switch />
+      <lib-feature-logout-button />
+    </div>
+  </ng-template>
+</p-toolbar>
