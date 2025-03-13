@@ -7,7 +7,8 @@
     "rxjs": "~7.8.2",
     "primeng": "^19.0.9",
     "@chmur-koty/util-environment-config": "0.0.1",
-    "@nx/angular": "20.5.0"
+    "@nx/angular": "20.5.0",
+    "@angular/common": "~19.2.1"
   },
   "sideEffects": false
 }
