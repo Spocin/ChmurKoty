@@ -1,0 +1,7 @@
+{
+  "$schema": "../../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../../dist/src/libs/data-access/redirect-to-app-when-authenticated-guard",
+  "lib": {
+    "entryFile": "src/index.ts"
+  }
+}

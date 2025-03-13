@@ -1,0 +1,5 @@
+<p-select-button class="w-full" optionLabel="label" optionValue="value"
+                 [ngModel]="themesService.activeTheme$()"
+                 [options]="themesOpts"
+                 (onOptionClick)="toggleTheme()"
+/>

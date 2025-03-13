@@ -15,9 +15,23 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@chmur-koty/data-access-auth-guard": ["src/libs/data-access/auth-guard/src/index.ts"],
+      "@chmur-koty/data-access-authentication-service": ["src/libs/data-access/authentication-service/src/index.ts"],
+      "@chmur-koty/data-access-language-service": ["src/libs/data-access/language-service/src/index.ts"],
+      "@chmur-koty/data-access-login-service": ["src/libs/data-access/login-service/src/index.ts"],
+      "@chmur-koty/data-access-redirect-to-app-when-authenticated-guard": [
+        "src/libs/data-access/redirect-to-app-when-authenticated-guard/src/index.ts"
+      ],
       "@chmur-koty/data-access-themes-service": ["src/libs/data-access/themes-service/src/index.ts"],
       "@chmur-koty/feature-home-page": ["src/libs/feature/home-page/src/index.ts"],
-      "@chmur-koty/feature-login-page": ["src/libs/feature/login-page/src/index.ts"]
+      "@chmur-koty/feature-language-switch": ["src/libs/feature/language-switch/src/index.ts"],
+      "@chmur-koty/feature-login-page": ["src/libs/feature/login-page/src/index.ts"],
+      "@chmur-koty/feature-theme-switch": ["src/libs/feature/theme-switch/src/index.ts"],
+      "@chmur-koty/ui-login-panel": ["src/libs/ui/login-panel/src/index.ts"],
+      "@chmur-koty/util-custom-prime-ng-presets": ["src/libs/util/custom-primeng-presets/src/index.ts"],
+      "@chmur-koty/util-environment": ["src/libs/util/environment/src/index.ts"],
+      "@chmur-koty/util-environment-config": ["src/libs/util/environment-config/src/index.ts"],
+      "@chmur-koty/util-types": ["src/libs/util/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

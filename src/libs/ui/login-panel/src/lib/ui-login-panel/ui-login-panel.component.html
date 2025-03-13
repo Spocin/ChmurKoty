@@ -1,0 +1,42 @@
+<p-panel styleClass="bg-slate-100 dark:bg-surface-900 min-w-100">
+  <ng-template pTemplate="header">
+    <div class="flex items-center justify-center min-w-60 min-h-60 w-full relative">
+      <img ngSrc="/chmurkoty_logo_1024_1024.png" priority fill alt="ChmurKoty" class="object-contain">
+    </div>
+  </ng-template>
+
+  <form class="flex flex-col gap-4 px-8 pb-8" (submit)="$event.preventDefault()">
+    <div class="pb-4">
+      @if (authenticationState() === true) {
+        <p-message severity="success" i18n>Success!</p-message>
+      } @else if (authenticationState() === false) {
+        <p-message severity="error" i18n>Invalid e-mail or password</p-message>
+      }
+    </div>
+
+    <p-float-label variant="on">
+      <input id="email" type="email" pInputText class="w-full" [formControl]="form.controls.email" />
+      <label for="email" i18n>E-mail</label>
+    </p-float-label>
+
+    <p-float-label variant="on">
+      <p-password inputId="password" type="password" inputStyleClass="w-full" styleClass="w-full"
+                  [formControl]="form.controls.password" [feedback]="false" />
+      <label for="password" i18n>Password</label>
+    </p-float-label>
+
+    <p-button class="pt-4" styleClass="w-full"
+              id="login-button"
+              type="submit"
+              [raised]="true"
+              [loading]="isLoggingIn$()"
+              [disabled]="!form.valid || isLoggingIn$() || authenticationState() === true"
+              (onClick)="emitLoginEvent()">
+      @if (isLoggingIn$()) {
+        <label for="login-button" i18n>Logging in</label>
+      } @else {
+        <label for="login-button" i18n>Log in</label>
+      }
+    </p-button>
+  </form>
+</p-panel>
