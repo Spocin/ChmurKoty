@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.app-dark, .app-dark *));
+
+:host {
+    @apply flex flex-col items-center justify-between w-full h-screen dark:bg-transparent;
+}
