@@ -24,6 +24,8 @@
       "@chmur-koty/feature-theme-switch": ["src/libs/feature/theme-switch/src/index.ts"],
       "@chmur-koty/ui-login-panel": ["src/libs/ui/login-panel/src/index.ts"],
       "@chmur-koty/util-custom-prime-ng-presets": ["src/libs/util/CustomPrimeNgPresets/src/index.ts"],
+      "@chmur-koty/util-environment": ["src/libs/util/environment/src/index.ts"],
+      "@chmur-koty/util-environment-config": ["src/libs/util/environment-config/src/index.ts"],
       "@chmur-koty/util-types": ["src/libs/util/types/src/index.ts"]
     }
   },

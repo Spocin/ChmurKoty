@@ -4,9 +4,9 @@ import { appRoutes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
-import { DataAccessThemesService } from '@chmur-koty/data-access-themes-service';
 import { ChmurKotyPreset } from '@chmur-koty/util-custom-prime-ng-presets';
 import { MessageService } from 'primeng/api';
+import { APP_CONFIG, environment } from '@chmur-koty/util-environment-config';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: ChmurKotyPreset,
         options: {
-          darkModeSelector: `.${DataAccessThemesService.darkModeClassName}`,
+          darkModeSelector: `.${environment.darkModeClassName}`,
           cssLayer: {
             name: 'primeng',
             order: 'theme, base, primeng',
@@ -27,5 +27,9 @@ export const appConfig: ApplicationConfig = {
     provideExperimentalZonelessChangeDetection(),
     provideRouter(appRoutes),
     MessageService,
+    {
+      provide: APP_CONFIG,
+      useValue: environment,
+    },
   ],
 };
