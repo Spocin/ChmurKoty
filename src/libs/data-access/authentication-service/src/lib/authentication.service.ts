@@ -1,8 +1,9 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, PLATFORM_ID, REQUEST } from '@angular/core';
 import { AuthenticationSettledResult, LoginEvent } from '@chmur-koty/util-types';
 import { delay, firstValueFrom, map, Observable, of } from 'rxjs';
 import { MessageService } from 'primeng/api';
 import { APP_CONFIG } from '@chmur-koty/util-environment-config';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 /**
  * Mocked user able to log in
@@ -18,13 +19,16 @@ const userMock: LoginEvent = {
 export class AuthenticationService {
   private readonly appConfig = inject(APP_CONFIG);
   private readonly messageService = inject(MessageService);
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly request = inject(REQUEST, { optional: true });
+  private readonly dom = inject(DOCUMENT);
 
   public async authenticateUser(loginEvent: LoginEvent): Promise<boolean | undefined> {
     try {
       const res = await firstValueFrom(this.mockAuthenticationCheckOnBackend(loginEvent));
 
       if (res.success) {
-        this.saveUserTokenToLocalStorage(res.token);
+        this.saveUserTokenToCookie(res.token);
 
         return true;
       }
@@ -61,11 +65,26 @@ export class AuthenticationService {
     );
   }
 
-  private saveUserTokenToLocalStorage(authenticationToken: string) {
-    localStorage.setItem(this.appConfig.localStorageAuthenticationKey, authenticationToken);
+  private saveUserTokenToCookie(authenticationToken: string) {
+    this.dom.cookie = `${this.appConfig.authCookieName}=${authenticationToken}}; path=/`;
   }
 
   public isAuthenticated(): boolean {
-    return !!localStorage.getItem(this.appConfig.localStorageAuthenticationKey);
+    const authCookieRegExp = new RegExp(`(^| )${this.appConfig.authCookieName}=([^;]+)`);
+    const authCookie = this.getCookies().match(authCookieRegExp);
+
+    if (authCookie === null) {
+      return false;
+    }
+
+    return decodeURIComponent(authCookie[1]) !== null;
+  }
+
+  private getCookies(): string {
+    if (isPlatformBrowser(this.platformId)) {
+      return this.dom.cookie;
+    }
+
+    return this.request?.headers.get('cookie') ?? '';
   }
 }

@@ -29,7 +29,7 @@ export class FeatureLoginPageComponent {
     this.messageService.add({
       severity: 'secondary',
       summary: 'Note for an author',
-      detail: 'Login delay is artificial :)',
+      detail: 'Delays are artificial to add feeling of real application :)',
     });
 
     const result = await this.authenticationService.authenticateUser(loginEvent);

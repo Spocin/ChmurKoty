@@ -4,5 +4,5 @@ export const environment: EnvironmentModel = {
   darkModeClassName: 'app-dark',
 
   localStorageThemeKey: 'app-theme',
-  localStorageAuthenticationKey: 'app-authentication',
+  authCookieName: 'app-auth-cookie',
 };
