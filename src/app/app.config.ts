@@ -6,6 +6,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { providePrimeNG } from 'primeng/config';
 import { DataAccessThemesServiceService } from '@chmur-koty/data-access-themes-service';
 import { ChmurKotyPreset } from '@chmur-koty/util-custom-prime-ng-presets';
+import { MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,5 +26,6 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideExperimentalZonelessChangeDetection(),
     provideRouter(appRoutes),
+    MessageService,
   ],
 };

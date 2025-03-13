@@ -1,1 +1,3 @@
-<p-select-button [ngModel]="languageService.activeLanguage$()" [options]="languagesOpts" />
+<p-select-button [ngModel]="languageService.activeLanguage$()"
+                 [options]="languagesOpts"
+                 (onOptionClick)="changeLanguage($event)" />

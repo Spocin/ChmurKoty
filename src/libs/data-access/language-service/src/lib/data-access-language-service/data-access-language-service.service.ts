@@ -2,6 +2,7 @@ import { inject, Injectable, isDevMode, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, take } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MessageService } from 'primeng/api';
 
 export const enum AppLanguages {
   EN = 'en',
@@ -13,6 +14,7 @@ export const enum AppLanguages {
 })
 export class DataAccessLanguageServiceService {
   private readonly router = inject(Router);
+  private readonly messageService = inject(MessageService);
 
   private readonly _activeLanguage$ = signal<AppLanguages | undefined>(undefined);
   public readonly activeLanguage$ = this._activeLanguage$.asReadonly();
@@ -25,10 +27,10 @@ export class DataAccessLanguageServiceService {
       return;
     }
 
-    this.computeLanguageBaseOnUrl();
+    this.computeLanguageBasedOnFirstUrl();
   }
 
-  private computeLanguageBaseOnUrl() {
+  private computeLanguageBasedOnFirstUrl() {
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
@@ -48,5 +50,21 @@ export class DataAccessLanguageServiceService {
 
   private isValidAppLanguage(value: string): value is AppLanguages {
     return value === AppLanguages.EN || value === AppLanguages.PL;
+  }
+
+  public changeLanguage(newLanguage: AppLanguages) {
+    const [, ...rest] = this.router.url.split('/');
+    const newUrl = `/${newLanguage}/${rest.join('/')}`;
+
+    if (isDevMode()) {
+      this.messageService.add({
+        summary: `Would redirect to: ${newUrl}`,
+        detail: `Prevented by dev mode`,
+      });
+
+      return;
+    }
+
+    window.location.href = newUrl;
   }
 }

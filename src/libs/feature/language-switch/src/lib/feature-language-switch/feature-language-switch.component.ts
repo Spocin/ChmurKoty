@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SelectButton } from 'primeng/selectbutton';
+import { SelectButton, SelectButtonOptionClickEvent } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
 import { AppLanguages, DataAccessLanguageServiceService } from '@chmur-koty/data-access-language-service';
 
@@ -23,4 +23,8 @@ export class FeatureLanguageSwitchComponent {
       value: AppLanguages.PL,
     },
   ];
+
+  protected changeLanguage(event: SelectButtonOptionClickEvent) {
+    this.languageService.changeLanguage(event.option.value);
+  }
 }
