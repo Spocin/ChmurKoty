@@ -2,7 +2,7 @@ export default {
   displayName: 'util-custom-prime-ng-presets',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../../coverage/src/libs/util/CustomPrimeNgPresets',
+  coverageDirectory: '../../../../coverage/src/libs/util/custom-primeng-presets',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

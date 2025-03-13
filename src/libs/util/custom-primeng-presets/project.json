@@ -1,7 +1,7 @@
 {
   "name": "util-custom-prime-ng-presets",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "src/libs/util/CustomPrimeNgPresets/src",
+  "sourceRoot": "src/libs/util/custom-primeng-presets/src",
   "prefix": "lib",
   "projectType": "library",
   "tags": ["type:util"],
@@ -10,14 +10,14 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "src/libs/util/CustomPrimeNgPresets/ng-package.json"
+        "project": "src/libs/util/custom-primeng-presets/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "src/libs/util/CustomPrimeNgPresets/tsconfig.lib.prod.json"
+          "tsConfig": "src/libs/util/custom-primeng-presets/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "src/libs/util/CustomPrimeNgPresets/tsconfig.lib.json"
+          "tsConfig": "src/libs/util/custom-primeng-presets/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -26,7 +26,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "src/libs/util/CustomPrimeNgPresets/jest.config.ts"
+        "jestConfig": "src/libs/util/custom-primeng-presets/jest.config.ts"
       }
     },
     "lint": {
