@@ -1,9 +1,0 @@
-{
-  "name": "@chmur-koty/data-access-login-service",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/core": "^19.2.0",
-    "@nx/angular": "20.5.0"
-  },
-  "sideEffects": false
-}

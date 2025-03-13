@@ -8,6 +8,7 @@ import { InputText } from 'primeng/inputtext';
 import { Password } from 'primeng/password';
 import { Button } from 'primeng/button';
 import { LoginEvent } from '@chmur-koty/util-types';
+import { Message } from 'primeng/message';
 
 @Component({
   selector: 'lib-ui-login-panel',
@@ -21,12 +22,15 @@ import { LoginEvent } from '@chmur-koty/util-types';
     ReactiveFormsModule,
     Button,
     Password,
+    Message,
   ],
   templateUrl: './ui-login-panel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UiLoginPanelComponent {
+  public readonly authenticationState = input.required<boolean | undefined>();
   public readonly isLoggingIn$ = input.required<boolean>();
+
   public readonly loginEvent = output<LoginEvent>();
 
   private readonly fb = inject(NonNullableFormBuilder);

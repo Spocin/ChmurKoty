@@ -1,9 +1,12 @@
 <div class="flex justify-end p-6">
-  <lib-feature-language-switch/>
+  <lib-feature-language-switch />
 </div>
 
-<lib-ui-login-panel [isLoggingIn$]="isLogginIn$()" (loginEvent)="handleLoginEvent($event)" />
+<lib-ui-login-panel
+  [isLoggingIn$]="isLogginIn$()"
+  [authenticationState]="authenticationState()"
+  (loginEvent)="handleLoginEvent($event)" />
 
 <div class="flex w-full justify-end p-6">
-  <lib-feature-theme-switch/>
+  <lib-feature-theme-switch />
 </div>
