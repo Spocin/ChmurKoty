@@ -1,18 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { FeatureLanguageSwitchComponent } from './feature-language-switch.component';
+import { MockProvider } from 'ng-mocks';
+import { MessageService } from 'primeng/api';
 
 describe('FeatureLanguageSwitchComponent', () => {
   let component: FeatureLanguageSwitchComponent;
-  let fixture: ComponentFixture<FeatureLanguageSwitchComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [FeatureLanguageSwitchComponent],
-    }).compileComponents();
+      providers: [MockProvider(MessageService)],
+    });
 
-    fixture = TestBed.createComponent(FeatureLanguageSwitchComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.runInInjectionContext(() => {
+      component = new FeatureLanguageSwitchComponent();
+    });
   });
 
   it('should create', () => {

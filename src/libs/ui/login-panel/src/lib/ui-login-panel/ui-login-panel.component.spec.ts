@@ -1,18 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { UiLoginPanelComponent } from './ui-login-panel.component';
 
 describe('UiLoginPanelComponent', () => {
   let component: UiLoginPanelComponent;
-  let fixture: ComponentFixture<UiLoginPanelComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [UiLoginPanelComponent],
-    }).compileComponents();
+    });
 
-    fixture = TestBed.createComponent(UiLoginPanelComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.runInInjectionContext(() => {
+      component = new UiLoginPanelComponent();
+    });
   });
 
   it('should create', () => {

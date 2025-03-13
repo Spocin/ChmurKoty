@@ -1,18 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { FeatureThemeSwitchComponent } from './feature-theme-switch.component';
+import { MockProvider } from 'ng-mocks';
+import { DataAccessThemesService } from '@chmur-koty/data-access-themes-service';
 
 describe('FeatureThemeSwitchComponent', () => {
   let component: FeatureThemeSwitchComponent;
-  let fixture: ComponentFixture<FeatureThemeSwitchComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [FeatureThemeSwitchComponent],
-    }).compileComponents();
+      providers: [MockProvider(DataAccessThemesService)],
+    });
 
-    fixture = TestBed.createComponent(FeatureThemeSwitchComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.runInInjectionContext(() => {
+      component = new FeatureThemeSwitchComponent();
+    });
   });
 
   it('should create', () => {

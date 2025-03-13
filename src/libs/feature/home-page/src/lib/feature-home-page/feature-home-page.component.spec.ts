@@ -1,12 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { FeatureHomePageComponent } from './feature-home-page.component';
+import { MockProvider } from 'ng-mocks';
+import { DataAccessThemesService } from '@chmur-koty/data-access-themes-service';
 
 describe('FeatureHomePageComponent', () => {
   let component: FeatureHomePageComponent;
 
-  beforeEach(async () => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [FeatureHomePageComponent],
+      providers: [MockProvider(DataAccessThemesService)],
     });
 
     TestBed.runInInjectionContext(() => {
