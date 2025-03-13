@@ -2,8 +2,12 @@
   "name": "@chmur-koty/data-access-authentication-service",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0"
+    "@angular/core": "^19.2.0",
+    "@chmur-koty/util-types": "0.0.1",
+    "rxjs": "~7.8.2",
+    "primeng": "^19.0.9",
+    "@chmur-koty/util-environment-config": "0.0.1",
+    "@nx/angular": "20.5.0"
   },
   "sideEffects": false
 }
