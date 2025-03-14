@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Toolbar } from 'primeng/toolbar';
@@ -9,7 +9,6 @@ import { FeatureLogoutButtonComponent } from '@chmur-koty/feature-logout-button'
 import { FeatureCatFactsScrollBoardComponent } from '@chmur-koty/feature-cat-facts-scroll-board';
 import { Panel } from 'primeng/panel';
 import { Button } from 'primeng/button';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'lib-feature-home-page',
