@@ -77,6 +77,10 @@
         <source>Change to <x id="INTERPOLATION" equiv-text="{{ item.label }}"/> mode</source>
         <target>Zmień na tryb <x id="INTERPOLATION" equiv-text="{{ item.label }}"/></target>
       </trans-unit>
+      <trans-unit id="3092545521306570242" datatype="html">
+        <source>Change language to <x id="INTERPOLATION" equiv-text="{{ item.label }}"/></source>
+        <target>Zmień język na <x id="INTERPOLATION" equiv-text="{{ item.label }}"/></target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
