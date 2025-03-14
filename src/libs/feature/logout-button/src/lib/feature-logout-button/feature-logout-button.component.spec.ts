@@ -1,18 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { FeatureLogoutButtonComponent } from './feature-logout-button.component';
+import { MockProvider } from 'ng-mocks';
+import { AuthenticationService } from '@chmur-koty/data-access-authentication-service';
+import { MessageService } from 'primeng/api';
 
 describe('FeatureLogoutButtonComponent', () => {
   let component: FeatureLogoutButtonComponent;
-  let fixture: ComponentFixture<FeatureLogoutButtonComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [FeatureLogoutButtonComponent],
-    }).compileComponents();
+      providers: [MockProvider(AuthenticationService), MockProvider(MessageService)],
+    });
 
-    fixture = TestBed.createComponent(FeatureLogoutButtonComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.runInInjectionContext(() => {
+      component = new FeatureLogoutButtonComponent();
+    });
   });
 
   it('should create', () => {

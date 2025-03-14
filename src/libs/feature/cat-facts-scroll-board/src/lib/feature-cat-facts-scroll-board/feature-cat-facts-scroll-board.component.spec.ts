@@ -1,18 +1,30 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { FeatureCatFactsScrollBoardComponent } from './feature-cat-facts-scroll-board.component';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { MockProvider } from 'ng-mocks';
+import { MessageService } from 'primeng/api';
+import { CatFactsService } from '@chmur-koty/data-access-cat-facts-service';
+import { APP_CONFIG } from '@chmur-koty/util-environment-config';
 
 describe('FeatureCatFactsScrollBoardComponent', () => {
   let component: FeatureCatFactsScrollBoardComponent;
-  let fixture: ComponentFixture<FeatureCatFactsScrollBoardComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [FeatureCatFactsScrollBoardComponent],
-    }).compileComponents();
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        MockProvider(MessageService),
+        MockProvider(CatFactsService),
+        MockProvider(APP_CONFIG),
+      ],
+    });
 
-    fixture = TestBed.createComponent(FeatureCatFactsScrollBoardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.runInInjectionContext(() => {
+      component = new FeatureCatFactsScrollBoardComponent();
+    });
   });
 
   it('should create', () => {
