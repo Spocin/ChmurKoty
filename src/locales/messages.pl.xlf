@@ -3,7 +3,67 @@
     <body>
       <trans-unit id="2336550011721758066" datatype="html">
         <source>Log in</source>
-        <target state="new">Zaloguj</target>
+        <target>Zaloguj</target>
+      </trans-unit>
+      <trans-unit id="4271694558446910665" datatype="html">
+        <source>Could not authenticate</source>
+        <target>Nie udało się uwierzytelnić</target>
+      </trans-unit>
+      <trans-unit id="637413167009983180" datatype="html">
+        <source>Failed to load new fact</source>
+        <target>Błąd podczas ładowania nowego faktu</target>
+      </trans-unit>
+      <trans-unit id="9207951824833474796" datatype="html">
+        <source>Would redirect to: <x id="PH" equiv-text="newUrl"/></source>
+        <target>Przekierowani nastąpiło by do: <x id="PH" equiv-text="newUrl"/></target>
+      </trans-unit>
+      <trans-unit id="2958159500336327666" datatype="html">
+        <source>Prevented by dev mode</source>
+        <target>Zatrzymane przez dev mode</target>
+      </trans-unit>
+      <trans-unit id="5534034606997069004" datatype="html">
+        <source>Redirected</source>
+        <target>Przekierowano</target>
+      </trans-unit>
+      <trans-unit id="4172486354012094953" datatype="html">
+        <source>Already logged in. Redirected to app</source>
+        <target>Już uwierzytelniono. Przekierowano do aplikacji</target>
+      </trans-unit>
+      <trans-unit id="1194356528792244196" datatype="html">
+        <source> Here are some cat facts for you! <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-sky-800 dark:from-amber-400 dark:to-amber-800&quot;&gt;"/> Enjoy! <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target> Łap parę faktów o kotach! <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-sky-800 dark:from-amber-400 dark:to-amber-800&quot;&gt;"/> Miauu! <x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+      </trans-unit>
+      <trans-unit id="3797778920049399855" datatype="html">
+        <source>Logout</source>
+        <target>Wyloguj</target>
+      </trans-unit>
+      <trans-unit id="1699748585121922983" datatype="html">
+        <source>Auth</source>
+        <target>Uwierzytelnianie</target>
+      </trans-unit>
+      <trans-unit id="331138523213932105" datatype="html">
+        <source>Successfully logged out</source>
+        <target>Pomyślnie wylogowano</target>
+      </trans-unit>
+      <trans-unit id="4836615552094365703" datatype="html">
+        <source>Success!</source>
+        <target>Sukces!</target>
+      </trans-unit>
+      <trans-unit id="948663849557707845" datatype="html">
+        <source>Invalid e-mail or password</source>
+        <target>Niepoprawny e-mail lub hasło</target>
+      </trans-unit>
+      <trans-unit id="1890300073702152532" datatype="html">
+        <source>E-mail</source>
+        <target>E-mail</target>
+      </trans-unit>
+      <trans-unit id="1431416938026210429" datatype="html">
+        <source>Password</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="155701839687322434" datatype="html">
+        <source>Logging in</source>
+        <target>Uwierzytelniam</target>
       </trans-unit>
     </body>
   </file>
