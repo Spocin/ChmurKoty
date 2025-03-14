@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MeowfactsResponse } from '@chmur-koty/util-types';
 import { MessageService } from 'primeng/api';
-import { firstValueFrom, map, Observable } from 'rxjs';
+import { delay, firstValueFrom, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -39,6 +39,7 @@ export class CatFactsService {
 
   private fetchNewFact(): Observable<string> {
     return this.httpClient.get<MeowfactsResponse>('https://meowfacts.herokuapp.com/').pipe(
+      delay(2000),
       map((res) => {
         const fact = res.data[0];
 

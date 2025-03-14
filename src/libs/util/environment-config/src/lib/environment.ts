@@ -7,4 +7,5 @@ export const environment: EnvironmentModel = {
   authCookieName: 'app-auth-cookie',
 
   numberOfInitialFactsToLoad: 5,
+  numberOfFactsToLoadOnScroll: 3,
 };

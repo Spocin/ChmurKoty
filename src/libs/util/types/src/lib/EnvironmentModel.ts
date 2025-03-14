@@ -3,4 +3,5 @@ export interface EnvironmentModel {
   localStorageThemeKey: string;
   authCookieName: string;
   numberOfInitialFactsToLoad: number;
+  numberOfFactsToLoadOnScroll: number;
 }
