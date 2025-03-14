@@ -4,10 +4,14 @@
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0",
-    "@chmur-koty/data-access-themes-service": "0.0.1",
     "primeng": "^19.0.9",
     "@angular/forms": "~19.2.1",
-    "@nx/angular": "20.5.0"
+    "@nx/angular": "20.5.0",
+    "@chmur-koty/feature-language-switch": "0.0.1",
+    "@chmur-koty/feature-theme-switch": "0.0.1",
+    "@chmur-koty/feature-logout-button": "0.0.1",
+    "@chmur-koty/feature-cat-facts-scroll-board": "0.0.1",
+    "rxjs": "~7.8.2"
   },
   "sideEffects": false
 }
