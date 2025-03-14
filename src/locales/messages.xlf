@@ -62,6 +62,9 @@
       <trans-unit id="3092545521306570242" datatype="html">
         <source>Change language to <x id="INTERPOLATION" equiv-text="{{ item.label }}"/></source>
       </trans-unit>
+      <trans-unit id="5743168293875908937" datatype="html">
+        <source>Fact #<x id="INTERPOLATION" equiv-text="{{idx + 1}}"/></source>
+      </trans-unit>
     </body>
   </file>
 </xliff>
