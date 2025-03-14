@@ -39,7 +39,6 @@ export class CatFactsService {
 
   private fetchNewFact(): Observable<string> {
     return this.httpClient.get<MeowfactsResponse>('https://meowfacts.herokuapp.com/').pipe(
-      delay(2000),
       map((res) => {
         const fact = res.data[0];
 
