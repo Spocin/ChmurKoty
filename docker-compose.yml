@@ -1,0 +1,6 @@
+name: 'ChmurKoty'
+services:
+  app:
+    image: ghcr.io/spocin/chmurkoty/app:latest
+    ports:
+      - '4000:4000'

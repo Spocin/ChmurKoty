@@ -26,8 +26,19 @@
         "tsConfig": "tsconfig.app.json",
         "assets": [
           {
-            "glob": "**/*",
-            "input": "public"
+            "input": "public/images",
+            "output": "public/images",
+            "glob": "**/*"
+          },
+          {
+            "input": "public/scripts",
+            "output": "public/scripts",
+            "glob": "**/*"
+          },
+          {
+            "input": "public/images",
+            "output": "public/images",
+            "glob": "**/*"
           }
         ],
         "styles": ["./src/styles.css"],
@@ -108,6 +119,38 @@
         "buildTarget": "ChmurKoty:build",
         "staticFilePath": "dist/ChmurKoty/browser",
         "spa": true
+      }
+    },
+    "container": {
+      "executor": "@nx-tools/nx-container:build",
+      "dependsOn": ["build"],
+      "options": {
+        "engine": "docker",
+        "context": "dist",
+        "file": "Dockerfile",
+        "load": true,
+        "metadata": {
+          "images": ["ghcr.io/spocin/chmurkoty/app"],
+          "tags": [
+            "latest",
+            "type=schedule",
+            "type=ref,event=tag",
+            "type=ref,event=pr",
+            "type=semver,pattern={{version}}",
+            "type=semver,pattern={{major}}.{{minor}}",
+            "type=semver,pattern={{major}}",
+            "type=sha,prefix=sha-"
+          ]
+        }
+      },
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "push": false
+        },
+        "production": {
+          "push": true
+        }
       }
     }
   }
