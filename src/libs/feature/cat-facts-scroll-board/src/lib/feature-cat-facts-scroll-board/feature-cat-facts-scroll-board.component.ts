@@ -2,7 +2,10 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  effect,
+  EnvironmentInjector,
   inject,
+  input,
   makeStateKey,
   OnInit,
   PendingTasks,
@@ -35,6 +38,9 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
   private readonly platformId = inject(PLATFORM_ID);
   private readonly appConfig = inject(APP_CONFIG);
   private readonly pendingTasks = inject(PendingTasks);
+  private readonly envInjector = inject(EnvironmentInjector);
+
+  public readonly scrollToTopToggle = input.required<boolean>();
 
   protected readonly initialFacts$ = signal<CatFact[]>([]);
   protected readonly lazyFacts$ = signal<LazyCatFact[]>([]);
@@ -74,6 +80,7 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
 
   ngAfterViewInit() {
     this.createScrollListener();
+    this.listenForScrollToTopEvents();
   }
 
   private createScrollListener() {
@@ -103,5 +110,15 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
 
     this.lazyFacts$.update((prev) => [...prev, ...newLazyFacts]);
     this.scrollPanel?.refresh();
+  }
+
+  private listenForScrollToTopEvents() {
+    effect(
+      () => {
+        this.scrollToTopToggle();
+        this.scrollPanel?.scrollTop(-1);
+      },
+      { injector: this.envInjector },
+    );
   }
 }
