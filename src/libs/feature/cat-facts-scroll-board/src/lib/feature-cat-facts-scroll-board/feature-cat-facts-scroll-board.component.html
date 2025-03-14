@@ -1,1 +1,13 @@
-<div class="w-full">TEST</div>
+<pre>Loading {{ isLoading() }}</pre>
+
+<p-scroll-panel #scrollPanel [style]="{ width: '100%', height: '45vh' }">
+  <div class="flex flex-col gap-2">
+    @for (fact of facts(); track idx; let idx = $index) {
+      <pre class="h-[200px] bg-red-500 gap-2">{{ idx }} {{ fact }}</pre>
+    }
+
+    @if (isLoading()) {
+      <pre>Loading...</pre>
+    }
+  </div>
+</p-scroll-panel>
