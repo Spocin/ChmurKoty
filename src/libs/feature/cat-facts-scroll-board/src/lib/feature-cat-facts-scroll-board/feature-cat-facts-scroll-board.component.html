@@ -1,7 +1,7 @@
-<p-scroll-panel #scrollPanel [style]="{ width: '100%', height: '45vh' }">
+<p-scroll-panel #scrollPanel styleClass="w-full h-[45vh] max-sm:h-[60vh]">
   @let initialFacts = initialFacts$();
 
-  <div class="flex flex-col gap-2 pr-4">
+  <div class="flex flex-col gap-2 pr-4 max-sm:pr-0">
     @for (fact of initialFacts; track idx; let idx = $index) {
       @let description = fact.description;
 
@@ -15,7 +15,7 @@
     }
 
     @for (lazyFact of lazyFacts$(); track lazyIdx; let lazyIdx = $index) {
-      @let description = lazyFact.description;
+      @let description = lazyFact.description | async;
 
       <p-panel>
         <ng-template pTemplate="header">
@@ -25,7 +25,7 @@
         @if (description) {
           <p class="text-wrap italic">{{ description }}</p>
         } @else {
-          <p>LOADING</p>
+          <p-skeleton height="4rem"/>
         }
       </p-panel>
     }

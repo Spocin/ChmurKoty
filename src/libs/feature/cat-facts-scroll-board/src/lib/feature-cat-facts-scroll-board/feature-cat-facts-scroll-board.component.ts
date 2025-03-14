@@ -2,7 +2,10 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  effect,
+  EnvironmentInjector,
   inject,
+  input,
   makeStateKey,
   OnInit,
   PendingTasks,
@@ -18,12 +21,13 @@ import { CatFact, LazyCatFact } from '@chmur-koty/util-types';
 import { APP_CONFIG } from '@chmur-koty/util-environment-config';
 import { Panel } from 'primeng/panel';
 import { PrimeTemplate } from 'primeng/api';
+import { Skeleton } from 'primeng/skeleton';
 
 const FACTS_TRANSFER_STATE = makeStateKey<CatFact[]>('cat-facts');
 
 @Component({
   selector: 'lib-feature-cat-facts-scroll-board',
-  imports: [CommonModule, ScrollPanel, Panel, PrimeTemplate],
+  imports: [CommonModule, ScrollPanel, Panel, PrimeTemplate, Skeleton],
   templateUrl: './feature-cat-facts-scroll-board.component.html',
   styleUrl: './feature-cat-facts-scroll-board.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,6 +38,9 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
   private readonly platformId = inject(PLATFORM_ID);
   private readonly appConfig = inject(APP_CONFIG);
   private readonly pendingTasks = inject(PendingTasks);
+  private readonly envInjector = inject(EnvironmentInjector);
+
+  public readonly scrollToTopToggle = input.required<boolean>();
 
   protected readonly initialFacts$ = signal<CatFact[]>([]);
   protected readonly lazyFacts$ = signal<LazyCatFact[]>([]);
@@ -73,6 +80,7 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
 
   ngAfterViewInit() {
     this.createScrollListener();
+    this.listenForScrollToTopEvents();
   }
 
   private createScrollListener() {
@@ -101,5 +109,16 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
     }
 
     this.lazyFacts$.update((prev) => [...prev, ...newLazyFacts]);
+    this.scrollPanel?.refresh();
+  }
+
+  private listenForScrollToTopEvents() {
+    effect(
+      () => {
+        this.scrollToTopToggle();
+        this.scrollPanel?.scrollTop(-1);
+      },
+      { injector: this.envInjector },
+    );
   }
 }
