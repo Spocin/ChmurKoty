@@ -15,12 +15,14 @@ import { CatFactsService } from '@chmur-koty/data-access-cat-facts-service';
 import { ScrollPanel } from 'primeng/scrollpanel';
 import { CatFact } from '@chmur-koty/util-types';
 import { APP_CONFIG } from '@chmur-koty/util-environment-config';
+import { Panel } from 'primeng/panel';
+import { PrimeTemplate } from 'primeng/api';
 
 const FACTS_TRANSFER_STATE = makeStateKey<CatFact[]>('cat-facts');
 
 @Component({
   selector: 'lib-feature-cat-facts-scroll-board',
-  imports: [CommonModule, ScrollPanel],
+  imports: [CommonModule, ScrollPanel, Panel, PrimeTemplate],
   templateUrl: './feature-cat-facts-scroll-board.component.html',
   styleUrl: './feature-cat-facts-scroll-board.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
