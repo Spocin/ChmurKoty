@@ -40,7 +40,7 @@ export class AuthenticationService {
       this.messageService.add({
         severity: 'error',
         summary: 'AuthenticationService',
-        detail: 'Could not authenticate',
+        detail: $localize`Could not authenticate`,
       });
 
       return undefined;
@@ -49,7 +49,6 @@ export class AuthenticationService {
 
   private mockAuthenticationCheckOnBackend(loginEvent: LoginEvent): Observable<AuthenticationSettledResult> {
     return of(loginEvent).pipe(
-      delay(3000),
       map((loginEvent) => {
         if (JSON.stringify(userMock) === JSON.stringify(loginEvent)) {
           return {
@@ -86,5 +85,9 @@ export class AuthenticationService {
     }
 
     return this.request?.headers.get('cookie') ?? '';
+  }
+
+  public removeAuthCookie() {
+    this.dom.cookie = `${this.appConfig.authCookieName}=; path=/`;
   }
 }

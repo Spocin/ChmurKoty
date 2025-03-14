@@ -58,8 +58,8 @@ export class DataAccessLanguageService {
 
     if (isDevMode()) {
       this.messageService.add({
-        summary: `Would redirect to: ${newUrl}`,
-        detail: `Prevented by dev mode`,
+        summary: $localize`Would redirect to: ${newUrl}`,
+        detail: $localize`Prevented by dev mode`,
       });
 
       return;

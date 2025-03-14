@@ -1,8 +1,15 @@
 @import "tailwindcss";
 @import "tailwindcss-primeui";
+@import "primeicons/primeicons.css";
 
 @custom-variant dark (&:where(.app-dark, .app-dark *));
 
 body {
     font-family: 'Sen', sans-serif;
+
+    @apply h-screen;
+}
+
+html {
+    @apply h-screen;
 }

@@ -13,8 +13,8 @@ export const redirectToAppWhenAuthenticatedGuard: CanActivateFn = () => {
 
     messageService.add({
       severity: 'secondary',
-      summary: 'Redirected',
-      detail: 'Already logged in. Redirected to app',
+      summary: $localize`Redirected`,
+      detail: $localize`Already logged in. Redirected to app`,
     });
 
     return false;
