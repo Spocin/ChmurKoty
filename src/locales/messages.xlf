@@ -68,6 +68,9 @@
       <trans-unit id="7507948636555938109" datatype="html">
         <source>Log out</source>
       </trans-unit>
+      <trans-unit id="8017931473828712219" datatype="html">
+        <source>Scroll to top</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

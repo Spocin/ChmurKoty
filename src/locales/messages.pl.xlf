@@ -89,6 +89,10 @@
         <source>Log out</source>
         <target>Wyloguj</target>
       </trans-unit>
+      <trans-unit id="8017931473828712219" datatype="html">
+        <source>Scroll to top</source>
+        <target>Przewiń do góry</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
