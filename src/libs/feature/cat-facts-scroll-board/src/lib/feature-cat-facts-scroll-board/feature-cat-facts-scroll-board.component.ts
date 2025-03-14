@@ -18,12 +18,13 @@ import { CatFact, LazyCatFact } from '@chmur-koty/util-types';
 import { APP_CONFIG } from '@chmur-koty/util-environment-config';
 import { Panel } from 'primeng/panel';
 import { PrimeTemplate } from 'primeng/api';
+import { Skeleton } from 'primeng/skeleton';
 
 const FACTS_TRANSFER_STATE = makeStateKey<CatFact[]>('cat-facts');
 
 @Component({
   selector: 'lib-feature-cat-facts-scroll-board',
-  imports: [CommonModule, ScrollPanel, Panel, PrimeTemplate],
+  imports: [CommonModule, ScrollPanel, Panel, PrimeTemplate, Skeleton],
   templateUrl: './feature-cat-facts-scroll-board.component.html',
   styleUrl: './feature-cat-facts-scroll-board.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -101,5 +102,6 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
     }
 
     this.lazyFacts$.update((prev) => [...prev, ...newLazyFacts]);
+    this.scrollPanel?.refresh();
   }
 }
