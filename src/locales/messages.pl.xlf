@@ -65,6 +65,18 @@
         <source>Logging in</source>
         <target>Uwierzytelniam</target>
       </trans-unit>
+      <trans-unit id="413116577994876478" datatype="html">
+        <source>Light</source>
+        <target>Jasny</target>
+      </trans-unit>
+      <trans-unit id="3892161059518616136" datatype="html">
+        <source>Dark</source>
+        <target>Ciemny</target>
+      </trans-unit>
+      <trans-unit id="7045286448491400304" datatype="html">
+        <source>Change to <x id="INTERPOLATION" equiv-text="{{ item.label }}"/> mode</source>
+        <target>Zmień na tryb <x id="INTERPOLATION" equiv-text="{{ item.label }}"/></target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
