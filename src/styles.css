@@ -13,3 +13,38 @@ body {
 html {
     @apply h-screen;
 }
+
+@font-face {
+    font-family: 'Sen', sans-serif;
+    src: url("public/fonts/Sen/Sen-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sen', sans-serif;
+    src: url("public/fonts/Sen/Sen-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sen', sans-serif;
+    src: url("public/fonts/Sen/Sen-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sen', sans-serif;
+    src: url("public/fonts/Sen/Sen-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sen', sans-serif;
+    src: url("public/fonts/Sen/Sen-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
