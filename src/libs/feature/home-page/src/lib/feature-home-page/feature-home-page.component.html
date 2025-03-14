@@ -11,17 +11,19 @@
   </ng-template>
 </p-toolbar>
 
-<main class="flex h-full flex-col items-center p-6 bg-slate-50 dark:bg-transparent">
+<main class="flex h-full flex-col items-center p-6 bg-slate-50 dark:bg-transparent max-sm:p-0">
   <div class="flex items-center justify-center min-w-60 min-h-60 w-full relative">
     <img ngSrc="/chmurkoty_logo_1024_1024.png" priority fill alt="ChmurKoty" class="object-contain">
   </div>
 
-  <p-panel class="min-w-[400px]" styleClass="border border-primary bg-slate-100 dark:bg-zinc-900">
+  <p-panel class="min-w-[400px] w-[60vw] max-sm:w-full" styleClass="border border-primary bg-slate-100 dark:bg-zinc-900 max-sm:border-none">
     <ng-template pTemplate="header">
-      <h1 class="text-2xl font-extrabold" i18n>
+      <h1 class="text-2xl font-extrabold max-sm:text-center" i18n>
         Here are some cat facts for you!
         <span
-          class="text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-sky-800 dark:from-amber-400 dark:to-amber-800">Enjoy!</span>
+          class="text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-sky-800 dark:from-amber-400 dark:to-amber-800">
+          Enjoy!
+        </span>
       </h1>
     </ng-template>
 
