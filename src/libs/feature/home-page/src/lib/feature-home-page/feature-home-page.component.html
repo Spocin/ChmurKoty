@@ -18,15 +18,19 @@
 
   <p-panel class="min-w-[400px] w-[60vw] max-sm:w-full" styleClass="border border-primary bg-slate-100 dark:bg-zinc-900 max-sm:border-none">
     <ng-template pTemplate="header">
-      <h1 class="text-2xl font-extrabold max-sm:text-center" i18n>
-        Here are some cat facts for you!
-        <span
-          class="text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-sky-800 dark:from-amber-400 dark:to-amber-800">
+      <div class="w-full flex justify-between gap-2">
+        <h1 class="text-2xl font-extrabold max-sm:text-center" i18n>
+          Here are some cat facts for you!
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-sky-800 dark:from-amber-400 dark:to-amber-800">
           Enjoy!
         </span>
-      </h1>
+        </h1>
+
+        <p-button icon="pi pi-angle-double-up" ariaLabel="scroll to top" title="Scroll to top" (onClick)="scrollToTopToggle.set(!scrollToTopToggle())"/>
+      </div>
     </ng-template>
 
-    <lib-feature-cat-facts-scroll-board class="h-full" />
+    <lib-feature-cat-facts-scroll-board class="h-full" [scrollToTopToggle]="scrollToTopToggle()" />
   </p-panel>
 </main>
