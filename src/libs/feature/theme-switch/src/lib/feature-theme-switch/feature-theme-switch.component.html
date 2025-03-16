@@ -1,5 +1,8 @@
 <p-select-button class="w-full" optionLabel="label" optionValue="value"
                  [ngModel]="themesService.activeTheme$()"
                  [options]="themesOpts"
-                 (onOptionClick)="toggleTheme()"
-/>
+                 (onOptionClick)="toggleTheme()">
+  <ng-template pTemplate="item" let-item>
+    <span title="Change to {{ item.label }} mode" i18n-title>{{ item.label }}</span>
+  </ng-template>
+</p-select-button>

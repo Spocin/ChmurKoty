@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { AppThemes, DataAccessThemesService } from '@chmur-koty/data-access-themes-service';
 import { SelectButton } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
+import { PrimeTemplate } from 'primeng/api';
 
 @Component({
   selector: 'lib-feature-theme-switch',
-  imports: [CommonModule, SelectButton, FormsModule],
+  imports: [CommonModule, SelectButton, FormsModule, PrimeTemplate],
   templateUrl: './feature-theme-switch.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -15,11 +16,11 @@ export class FeatureThemeSwitchComponent {
 
   protected themesOpts = [
     {
-      label: 'Light',
+      label: $localize`Light`,
       value: AppThemes.LIGHT,
     },
     {
-      label: 'Dark',
+      label: $localize`Dark`,
       value: AppThemes.DARK,
     },
   ];

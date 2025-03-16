@@ -1,3 +1,7 @@
 <p-select-button [ngModel]="languageService.activeLanguage$()"
                  [options]="languagesOpts"
-                 (onOptionClick)="changeLanguage($event)" />
+                 (onOptionClick)="changeLanguage($event)">
+  <ng-template pTemplate="item" let-item>
+    <span title="Change language to {{ item.label }}" i18n-title>{{ item.label }}</span>
+  </ng-template>
+</p-select-button>

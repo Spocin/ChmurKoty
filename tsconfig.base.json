@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "types": ["@angular/localize"],
+    "types": ["jest","@angular/localize"],
     "paths": {
       "@chmur-koty/data-access-auth-guard": ["src/libs/data-access/auth-guard/src/index.ts"],
       "@chmur-koty/data-access-authentication-service": ["src/libs/data-access/authentication-service/src/index.ts"],

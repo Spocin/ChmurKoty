@@ -5,7 +5,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MessageService } from 'primeng/api';
 
 export const enum AppLanguages {
-  EN = 'en',
+  EN = 'en-US',
   PL = 'pl',
 }
 

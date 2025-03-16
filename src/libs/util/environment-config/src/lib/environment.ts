@@ -8,4 +8,7 @@ export const environment: EnvironmentModel = {
 
   numberOfInitialFactsToLoad: 5,
   numberOfFactsToLoadOnScroll: 3,
+  scrollLoadMoreDebounceTime: 100,
+
+  matchFactRetryCount: 5,
 };

@@ -13,10 +13,11 @@
 
 <main class="flex h-full flex-col items-center p-6 bg-slate-50 dark:bg-transparent max-sm:p-0">
   <div class="flex items-center justify-center min-w-60 min-h-60 w-full relative">
-    <img ngSrc="/chmurkoty_logo_1024_1024.png" priority fill alt="ChmurKoty" class="object-contain">
+    <img ngSrc="public/images/chmurkoty_logo_1024_1024.png" priority fill alt="ChmurKoty" class="object-contain">
   </div>
 
-  <p-panel class="min-w-[400px] w-[60vw] max-sm:w-full" styleClass="border border-primary bg-slate-100 dark:bg-zinc-900 max-sm:border-none">
+  <p-panel class="min-w-[400px] w-[60vw] max-sm:w-full"
+           styleClass="border border-primary bg-slate-100 dark:bg-zinc-900 max-sm:border-none">
     <ng-template pTemplate="header">
       <div class="w-full flex justify-between gap-2">
         <h1 class="text-2xl font-extrabold max-sm:text-center" i18n>
@@ -27,7 +28,8 @@
         </span>
         </h1>
 
-        <p-button icon="pi pi-angle-double-up" ariaLabel="scroll to top" title="Scroll to top" (onClick)="scrollToTopToggle.set(!scrollToTopToggle())"/>
+        <p-button icon="pi pi-angle-double-up" ariaLabel="scroll to top" title="Scroll to top" i18n-title
+                  (onClick)="scrollToTopToggle.set(!scrollToTopToggle())" />
       </div>
     </ng-template>
 

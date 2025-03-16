@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SelectButton, SelectButtonOptionClickEvent } from 'primeng/selectbutton';
 import { FormsModule } from '@angular/forms';
 import { AppLanguages, DataAccessLanguageService } from '@chmur-koty/data-access-language-service';
+import { PrimeTemplate } from 'primeng/api';
 
 @Component({
   selector: 'lib-feature-language-switch',
-  imports: [CommonModule, SelectButton, FormsModule],
+  imports: [CommonModule, SelectButton, FormsModule, PrimeTemplate],
   templateUrl: './feature-language-switch.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

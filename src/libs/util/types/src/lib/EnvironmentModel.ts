@@ -4,4 +4,6 @@ export interface EnvironmentModel {
   authCookieName: string;
   numberOfInitialFactsToLoad: number;
   numberOfFactsToLoadOnScroll: number;
+  scrollLoadMoreDebounceTime: number;
+  matchFactRetryCount: number;
 }
