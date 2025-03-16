@@ -129,7 +129,7 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
       //Assume that minimal fact size is 104px
       const factHeight = 104;
 
-      const initialFactsHeight = this.appConfig.numberOfFactsToLoadOnScroll * factHeight;
+      const initialFactsHeight = this.initialFacts$().length * factHeight;
       const numberOfFactsToLoad = Math.floor((clientHeight - initialFactsHeight) / factHeight);
 
       this.lazyLoadFacts(numberOfFactsToLoad);
