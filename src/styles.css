@@ -4,6 +4,10 @@
 
 @custom-variant dark (&:where(.app-dark, .app-dark *));
 
+:root {
+    --p-scrollpanel-bar-background: var(--color-slate-200);
+}
+
 body {
     font-family: 'Sen', sans-serif;
 

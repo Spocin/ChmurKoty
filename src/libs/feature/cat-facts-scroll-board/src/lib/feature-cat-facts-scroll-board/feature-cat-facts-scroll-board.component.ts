@@ -29,7 +29,6 @@ const FACTS_TRANSFER_STATE = makeStateKey<CatFact[]>('cat-facts');
   selector: 'lib-feature-cat-facts-scroll-board',
   imports: [CommonModule, ScrollPanel, Panel, PrimeTemplate, Skeleton],
   templateUrl: './feature-cat-facts-scroll-board.component.html',
-  styleUrl: './feature-cat-facts-scroll-board.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewInit {
@@ -79,6 +78,7 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
   }
 
   ngAfterViewInit() {
+    this.fillEmptySpace();
     this.createScrollListener();
     this.listenForScrollToTopEvents();
   }
@@ -95,14 +95,14 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
     //Only trigger events 40px from bottom
     if (target.scrollTop + target.clientHeight >= target.scrollHeight - 40) {
       this.scrollTimeoutId = setTimeout(() => {
-        this.loadMoreFacts();
-      }, 100);
+        this.loadMoreFacts(this.appConfig.numberOfFactsToLoadOnScroll);
+      }, this.appConfig.scrollLoadMoreDebounceTime);
     }
   };
 
-  private loadMoreFacts() {
+  private loadMoreFacts(factsToLoad: number) {
     const newLazyFacts: LazyCatFact[] = [];
-    for (let i = 0; i < this.appConfig.numberOfFactsToLoadOnScroll; i++) {
+    for (let i = 0; i < factsToLoad; i++) {
       newLazyFacts.push({
         description: this.catFactsService.loadNewFact().finally(() => this.scrollPanel?.refresh()),
       });
@@ -120,5 +120,19 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
       },
       { injector: this.envInjector },
     );
+  }
+
+  private fillEmptySpace() {
+    const { scrollHeight, clientHeight } = this.scrollPanel?.contentViewChild?.nativeElement as HTMLElement;
+
+    if (scrollHeight <= clientHeight) {
+      //Assume that minimal fact size is 104px
+      const factHeight = 104;
+
+      const initialFactsHeight = this.appConfig.numberOfFactsToLoadOnScroll * factHeight;
+      const numberOfFactsToLoad = Math.floor((clientHeight - initialFactsHeight) / factHeight);
+
+      this.loadMoreFacts(numberOfFactsToLoad);
+    }
   }
 }
