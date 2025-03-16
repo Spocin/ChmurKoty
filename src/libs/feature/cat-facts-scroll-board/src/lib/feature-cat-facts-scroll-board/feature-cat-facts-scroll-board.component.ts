@@ -95,12 +95,12 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
     //Only trigger events 40px from bottom
     if (target.scrollTop + target.clientHeight >= target.scrollHeight - 40) {
       this.scrollTimeoutId = setTimeout(() => {
-        this.loadMoreFacts(this.appConfig.numberOfFactsToLoadOnScroll);
+        this.lazyLoadFacts(this.appConfig.numberOfFactsToLoadOnScroll);
       }, this.appConfig.scrollLoadMoreDebounceTime);
     }
   };
 
-  private loadMoreFacts(factsToLoad: number) {
+  private lazyLoadFacts(factsToLoad: number) {
     const newLazyFacts: LazyCatFact[] = [];
     for (let i = 0; i < factsToLoad; i++) {
       newLazyFacts.push({
@@ -132,7 +132,12 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
       const initialFactsHeight = this.appConfig.numberOfFactsToLoadOnScroll * factHeight;
       const numberOfFactsToLoad = Math.floor((clientHeight - initialFactsHeight) / factHeight);
 
-      this.loadMoreFacts(numberOfFactsToLoad);
+      console.log('SH', scrollHeight);
+      console.log('CH', clientHeight);
+
+      console.log('TO LOAD', numberOfFactsToLoad);
+
+      this.lazyLoadFacts(numberOfFactsToLoad);
     }
   }
 }
