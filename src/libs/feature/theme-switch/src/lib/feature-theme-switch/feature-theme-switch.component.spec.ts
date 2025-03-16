@@ -3,6 +3,9 @@ import { FeatureThemeSwitchComponent } from './feature-theme-switch.component';
 import { MockProvider } from 'ng-mocks';
 import { DataAccessThemesService } from '@chmur-koty/data-access-themes-service';
 
+/*FIXME For some crazy reason only this component won't load localize package*/
+import '@angular/localize/init';
+
 describe('FeatureThemeSwitchComponent', () => {
   let component: FeatureThemeSwitchComponent;
 

@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MeowfactsResponse } from '@chmur-koty/util-types';
 import { MessageService } from 'primeng/api';
-import { delay, firstValueFrom, map, Observable } from 'rxjs';
+import { firstValueFrom, map, Observable } from 'rxjs';
 import { APP_CONFIG } from '@chmur-koty/util-environment-config';
 
 @Injectable({
