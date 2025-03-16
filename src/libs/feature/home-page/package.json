@@ -10,8 +10,7 @@
     "@chmur-koty/feature-language-switch": "0.0.1",
     "@chmur-koty/feature-theme-switch": "0.0.1",
     "@chmur-koty/feature-logout-button": "0.0.1",
-    "@chmur-koty/feature-cat-facts-scroll-board": "0.0.1",
-    "rxjs": "~7.8.2"
+    "@chmur-koty/feature-cat-facts-scroll-board": "0.0.1"
   },
   "sideEffects": false
 }
