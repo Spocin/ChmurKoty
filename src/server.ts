@@ -34,7 +34,7 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
-  })
+  }),
 );
 
 /**
@@ -43,9 +43,7 @@ app.use(
 app.use('/**', (req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next()
-    )
+    .then((response) => (response ? writeResponseToNodeResponse(response, res) : next()))
     .catch(next);
 });
 
@@ -55,9 +53,28 @@ app.use('/**', (req, res, next) => {
  */
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
-  app.listen(port, () => {
+  const server = app.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
+
+  // Gracefully handle shutdown
+  const shutdown = () => {
+    console.log('Received shutdown signal. Closing server...');
+    server.close(() => {
+      console.log('Server closed. Exiting process...');
+      process.exit(0);
+    });
+
+    // Force exit if it takes too long
+    setTimeout(() => {
+      console.error('Forcefully shutting down...');
+      process.exit(1);
+    }, 5000); // 5s timeout
+  };
+
+  // Capture termination signals
+  process.on('SIGTERM', shutdown);
+  process.on('SIGINT', shutdown);
 }
 
 /**
