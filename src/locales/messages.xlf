@@ -63,13 +63,16 @@
         <source>Change language to <x id="INTERPOLATION" equiv-text="{{ item.label }}"/></source>
       </trans-unit>
       <trans-unit id="5743168293875908937" datatype="html">
-        <source>Fact #<x id="INTERPOLATION" equiv-text="{{idx + 1}}"/></source>
+        <source>Fact #<x id="INTERPOLATION" equiv-text="{{ idx + 1 }}"/></source>
       </trans-unit>
       <trans-unit id="7507948636555938109" datatype="html">
         <source>Log out</source>
       </trans-unit>
       <trans-unit id="8017931473828712219" datatype="html">
         <source>Scroll to top</source>
+      </trans-unit>
+      <trans-unit id="2409854722827051317" datatype="html">
+        <source>Oops failed to load 😰</source>
       </trans-unit>
     </body>
   </file>

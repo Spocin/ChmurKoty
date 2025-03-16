@@ -82,7 +82,7 @@
         <target>Zmień język na <x id="INTERPOLATION" equiv-text="{{ item.label }}"/></target>
       </trans-unit>
       <trans-unit id="5743168293875908937" datatype="html">
-        <source>Fact #<x id="INTERPOLATION" equiv-text="{{idx + 1}}"/></source>
+        <source>Fact #<x id="INTERPOLATION" equiv-text="{{ idx + 1 }}"/></source>
         <target>Fakt #<x id="INTERPOLATION" equiv-text="{{idx + 1}}"/></target>
       </trans-unit>
       <trans-unit id="7507948636555938109" datatype="html">
@@ -92,6 +92,10 @@
       <trans-unit id="8017931473828712219" datatype="html">
         <source>Scroll to top</source>
         <target>Przewiń do góry</target>
+      </trans-unit>
+      <trans-unit id="2409854722827051317" datatype="html">
+        <source>Oops failed to load 😰</source>
+        <target>Uuups nie udało się załadować 😰</target>
       </trans-unit>
     </body>
   </file>
