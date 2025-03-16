@@ -6,6 +6,8 @@ export const environment: EnvironmentModel = {
   localStorageThemeKey: 'app-theme',
   authCookieName: 'app-auth-cookie',
 
-  numberOfInitialFactsToLoad: 5,
+  numberOfInitialFactsToLoad: 1,
   numberOfFactsToLoadOnScroll: 3,
+
+  matchFactRetryCount: 5,
 };

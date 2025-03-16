@@ -7,7 +7,7 @@
 
       <p-panel>
         <ng-template pTemplate="header">
-          <span class="font-bold underline" i18n>Fact #{{idx + 1}}</span>
+          <span class="font-bold underline" i18n>Fact #{{ idx + 1 }}</span>
         </ng-template>
 
         <p class="text-wrap italic">{{ description }}</p>
@@ -17,15 +17,17 @@
     @for (lazyFact of lazyFacts$(); track lazyIdx; let lazyIdx = $index) {
       @let description = lazyFact.description | async;
 
-      <p-panel>
+      <p-panel [styleClass]="description === undefined ? 'border-red-500' : ''">
         <ng-template pTemplate="header">
-          <span class="font-bold underline" i18n>Fact #{{initialFacts.length + lazyIdx + 1}}</span>
+          <span class="font-bold underline" i18n>Fact #{{ initialFacts.length + lazyIdx + 1 }}</span>
         </ng-template>
 
         @if (description) {
           <p class="text-wrap italic">{{ description }}</p>
-        } @else {
-          <p-skeleton height="4rem"/>
+        } @else if (description === null) {
+          <p-skeleton height="4rem" />
+        } @else if (description === undefined) {
+          <p i18n>Oops failed to load 😰</p>
         }
       </p-panel>
     }
