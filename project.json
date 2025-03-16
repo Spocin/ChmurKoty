@@ -145,7 +145,7 @@
       },
       "defaultConfiguration": "production",
       "configurations": {
-        "development": {
+        "local": {
           "push": false
         },
         "production": {
