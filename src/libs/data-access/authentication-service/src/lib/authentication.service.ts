@@ -1,6 +1,6 @@
 import { inject, Injectable, PLATFORM_ID, REQUEST } from '@angular/core';
 import { AuthenticationSettledResult, LoginEvent } from '@chmur-koty/util-types';
-import { delay, firstValueFrom, map, Observable, of } from 'rxjs';
+import { firstValueFrom, map, Observable, of } from 'rxjs';
 import { MessageService } from 'primeng/api';
 import { APP_CONFIG } from '@chmur-koty/util-environment-config';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
