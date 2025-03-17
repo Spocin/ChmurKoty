@@ -130,7 +130,7 @@ export class FeatureCatFactsScrollBoardComponent implements OnInit, AfterViewIni
       const factHeight = 104;
 
       const initialFactsHeight = this.initialFacts$().length * factHeight;
-      const numberOfFactsToLoad = Math.floor((clientHeight - initialFactsHeight) / factHeight);
+      const numberOfFactsToLoad = Math.floor((clientHeight - initialFactsHeight) / factHeight) + 1;
 
       this.lazyLoadFacts(numberOfFactsToLoad);
     }
